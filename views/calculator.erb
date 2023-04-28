@@ -1,0 +1,144 @@
+
+
+        <h1 class = "bg-success font-weight-bold text-uppercase"style = "text-align: center;">Ecoillumination</h1> 
+        <h4 class = "bg-success text-center">Lighting the Way Since 2021</h4> 
+
+        <div class="row">
+        <div class="col-auto">
+          <h2>Lightbulb Calculator</h2>  
+        </div>
+      </div>
+       
+
+    <h3 style="font-size:2vw;"> Fill In the fields below to get an estimate for how much money you can save by switching lightbulbs <br>(All information should be written on lightbulb packaging)</h3>
+
+
+    <form id = "myForm" value = "myForm" method="POST" action="/calculate_post"> 
+      <img src = "images/lightbulbIMG.jpg" alt = "Lightbulb" style = "float:right; width:30%; height:60%;">
+
+
+      <label for="Quantity" id="QuantityLabel" style="font-size:1.7vw;">Quantity of bulbs (1-500) </label>
+      <input type= "text" id = "QuantityForm" name="Quantity" style="font-size:1.5vw;" required> <br>
+
+      <label for="Wattage" id="WattageLabel" style="font-size:1.7vw;">Wattage (In Watts per bulb) </label>
+      <input type="text" id="WattageForm" name="wattage" style="font-size:1.5vw;" required> <br>
+
+      <label for="Luminage" id="LuminageLabel" style="font-size:1.7vw;">Luminage (In Lumens) </label>
+      <input type= "text" id = "LuminageForm" name="Luminage" style="font-size:1.5vw;" required> <br>
+
+      <label for="cost" id="CostLabel" style="font-size:1.7vw;">Cost of Lightbulb (in USD)</label>
+      <input type="text" id="CostForm" name="cost" style="font-size:1.5vw;" required> <br>
+      
+      <label for="Lifespan" id="LifespanLabel" style="font-size:1.7vw;">Average Lifespan (In Hours of Use)</label>
+      <input type= "text" id="LifespanForm" name="Lifespan" style="font-size:1.5vw;" required> <br>
+    
+      <label for="frosted" style="font-size:1.7vw;">Is your bulb frosted?:</label>
+      <select name="frosted" id="frosted" style="font-size:1.5vw;" required>
+      <option value="true" selected>frosted</option>
+      <option value="false">not frosted</option>
+      </select><br>    
+
+      <label for="shape" style="font-size:1.7vw;">Select a Shape:</label>
+      <select name="shape" id="shape" style="font-size:1.5vw;" required>
+      <option value="A" selected>A</option>
+      <option value="B">B</option>
+      <option value="C" >C</option>
+      <option value="D" >D</option>
+      <option value="E">E</option>
+      <option value="F" >F</option>
+      <option value="G" >G</option>
+      <option value="R">R</option>
+      <option value="S" >S</option>
+      <option value="T" >T</option>
+      <option value="AR">AR</option>
+      <option value="BR" >BR</option>
+      <option value="BT" >BT</option>
+      <option value="CA">CA</option>
+      <option value="ED" >ED</option>
+      <option value="MR" >MR</option>
+      <option value="PS">PS</option>
+      <option value="RP">RP</option>
+      <option value="PAR">PAR</option>
+      <option value="Prism">Prism</option>
+      <option value="Linear Fluorescents">Linear Fluorescents</option>
+      <option value="Compact Fluorescent Coils">Compact Fluorescent Coils</option>
+      </select><br>
+
+      <label for="size" id="SizeLabel" style="font-size:1.7vw;">Size of Lightbulb</label>
+      <input type="text" id="SizeForm" name="size" style="font-size:1.5vw;" required> <br>
+
+  <!--ADD ALL THE BASES -->
+      <label for="base" style="font-size:1.7vw;">Select a Base Type:</label>
+      <select name="base" id="base" style="font-size:1.5vw;" required>
+      <option value="E10" selected>E10</option>
+      <option value="E11">E11</option>
+      <option value="E12" >E12</option>
+      <option value="E14" >E14</option>
+      <option value="E17" >E17</option>
+      <option value="E26" >E26</option>
+      <option value="E27" >E27</option>
+      <option value="E39" >E39</option>
+      <option value="E40" >E40</option>
+      <option value="EX39" >EX39</option>
+      <option value="GU10" >GU10</option>
+      <option value="GU24" >GU24</option>
+
+      </select><br>
+
+      <label for="warmth" style="font-size:1.7vw;">Select Warmth:</label>
+      <select name="warmth" id="warmth" style="font-size:1.5vw;" required>
+      <option value="2700" selected>2700</option>
+      <option value="5000">5000</option>
+      <option value="other" >other</option>
+      </select><br>
+
+      <label for="dimmable" style="font-size:1.7vw;">Is your bulb dimmable?:</label>
+      <select name="dimmable" id="dimmable" style="font-size:1.5vw;" required>
+      <option value="true" selected>dimmable</option>
+      <option value="false">not dimmable</option>
+      </select><br><br>   
+
+      <input class="btn btn-success" type="submit" value="Submit" id="myBtn">
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Click here for results!
+</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Results</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+ 
+<p>Current: estimating with price of $ <bdi id = "getprice"></bdi> per bulb according to this link (userLightbulb.getLink()).</p>
+        <p>$<bdi id = "pricePerkWh"></bdi> per kilowatt hour(kWh).</p>
+        <p><bdi id = "getwatts"></bdi> Watts = (<bdi id = "getwatts"></bdi>/1000) Kilowatts(kW).</p>
+        <p>Uses <bdi id = "getprice"></bdi> x (<bdi id = "getwatts"></bdi>()/1000) = $(pricePerkWh*userLightbulb.getWatts()/1000) of electricity per hour.</p>
+        <p>Estimating with price of $ <bdi id = "price"></bdi>(userLightbulb.getPrice()) per bulb according to this link (userLightbulb.getLink()).</p>
+    <!-- <script type="text/javascript">
+  
+</script> -->
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+    </form>
+

@@ -1,0 +1,26 @@
+<!-- pricePerkWh = 0.1155 -->
+  <div class="row">
+  <div class="col-auto">
+    <h1>Results!</h1>
+    <%if(!@alternatives.nil?) %>
+      <% @alternatives.each do |bulb| %>
+         <p>Costs $" + <%= @lightbulb.price %> +", lasts " + <%= @lightbulb.lifespan %> + " hours, uses " + <%= @lightbulb.price %> + "/" + <%= @lightbulb.lifespan %>+" = "+ <%= (@lightbulb.price)/(@lightbulb.lifespan) %>)+" of value per hour.</p>
+        <p>Hourly energy cost + hourly value loss = hourly cost of $" + <%= (lightbulb.price)/(lightbulb.lifespan) + (0.1155 * lightbulb.watts/1000)%>.</p>
+        <p>Cost per thousand hours: $0.1155</p> 
+        <br>
+        <p>Alternative: estimating with price of $<%= bulb.price %> per bulb according to this link</p>
+        <p>(<%= bulb.link %>)</p>
+        <br>
+        <p>$0.1155 per kilowatt hour (kWh)</p>
+        <p><%= bulb.watts %> Watts = <%= (bulb.watts)/1000 %> Kilowatts(kW)</p>
+
+        <p>Watts: <%= bulb.watts %> </p>
+      <%end%>
+    <%end%>
+  </div>
+</div>
+
+
+<button onclick="window.print()">Print this page</button>
+  
+    
